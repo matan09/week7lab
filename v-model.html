@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>v-model</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Hello Vue</h1>
+        <label for="name">Please enter your name: </label>
+        <input v-model="name" id="name">
+        <p v-if="name">
+            Your name is {{ name }}
+        </p>
+        <p>
+            <button v-on:click="clear">Clear</button>
+        </p>
+    </div>
+
+    <script>
+        let app = new Vue({ // a new Vue object is created
+        //The property el: binds the new Vue object to the HTML element with id="app".
+            el: "#app",
+            data: {
+                name: ""
+            },
+            methods: {
+                clear: function() {
+                    this.name = ""
+                }
+            }
+        })
+    </script>
+</body>
+</html>
